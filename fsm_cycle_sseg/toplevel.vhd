@@ -28,11 +28,10 @@ architecture top_display_arch of top_display is
         sseg => sseg,
         enable => enable,
         pause => sw(0),
-        cw => sw(1),
-        reset => '0'
+        cw => sw(1)
     );
 
-    process(clk)
+    process(clk, divide_clk)
     begin
         if(clk'event and clk='1') then
             divide_clk <= divide_clk + 1;
